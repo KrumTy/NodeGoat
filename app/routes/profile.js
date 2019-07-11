@@ -23,7 +23,7 @@ function ProfileHandler(db) {
             // doc.firstNameSafeString = ESAPI.encoder().encodeForHTML(doc.firstName)
             // fix it by replacing the above with another template variable that is used for 
             // the context of a URL in a link header
-            doc.doc.firstNameSafeURLString = ESAPI.encoder().encodeForURL(urlInput)
+            doc.firstNameSafeURLString = ESAPI.encoder().encodeForURL(doc.firstName)
 
             return res.render("profile", doc);
         });
