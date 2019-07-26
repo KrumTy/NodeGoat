@@ -9,7 +9,8 @@ function ResearchHandler(db) {
     this.displayResearch = function(req, res, next) {
         
         if (req.query.symbol) {
-            var url = req.query.url+req.query.symbol; 
+            var symbol = req.query.symbol;
+            var url = `https://finance.yahoo.com/quote/${symbol}`; 
             needle.get(url, function(error, newResponse) {
                 if (!error && newResponse.statusCode == 200)
                     res.writeHead(200, {'Content-Type': 'text/html'});
